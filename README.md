@@ -1,8 +1,6 @@
-## Run single cron job on multiple server 
-
 ### Create EC2 Instance in AWS
 
-First, open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ and click on “Running Instances”. 
+Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/ and click on “Running Instances”. 
 
 - Click on Launch Instance.
 
@@ -651,9 +649,3 @@ In that file add the following line to add our scheduler in the crontab,
 * * * * * cd /var/www/my_app_name && php artisan schedule:run >> /dev/null 2>&1
 ```
 
-That's all. Viola !
-We did this. 
-
-We need to take a AMI Image of this instance and launch the AMI as a new instance and check all "Security Groups" to allow "http" with port "80" to server our application and launch the instance. 
-
-Now we have the multiple instance with single cron running. 
